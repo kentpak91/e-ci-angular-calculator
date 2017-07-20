@@ -3,18 +3,56 @@
   <h1>
     Welcome to {{title}}!
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+ <p><input [(ngModel)]="a" placeholder="a"></p>
+ <p><input [(ngModel)]="b" placeholder="b"></p>
+ <p><select [(ngModel)]="operator">
+	<option value='+'>+</option>
+	<option value='-'>-</option>
+	<option value='*'>*</option>
+	<option value='/'>/</option>
+	<option value='^'>^</option>
+	<option value='sqrt'>&radic;</option>
+ </select></p>
+ <p>{{a}} {{operator}} {{b}}</p>
 
+<button (click)="total = total + 1">Total</button>
+
+<p>{{ total }}</p>
+
+<p>{{ output }}</p>
+<p>{{ pendingOperation }}</p>
+
+<table>
+<tr>
+<td colspan="5" class="calOutputBkg"><p class="calOutput">{{ output }} <br> {{ pendingOperation }} </p></td>
+</tr>
+<tr>
+ <td><button name="btn1" class="numberbutton" value="1" (click)="updateOutput('1')">1</button></td>
+ <td><button name="btn2" class="numberbutton" value="2" (click)="updateOutput('2')">2</button></td>
+ <td><button name="btn3" class="numberbutton" value="3" (click)="updateOutput('3')">3</button></td>
+ <td><button name="btnplus" class="numberbutton" value="+" (click)="operation('+')">+</button></td>
+ <td><button name="btnpow" class="numberbutton" value="^" (click)="operation('^')">^</button></td>
+</tr>
+<tr>
+ <td><button name="btn4" class="numberbutton" value="4" (click)="updateOutput('4')">4</button></td>
+ <td><button name="btn5" class="numberbutton" value="5" (click)="updateOutput('5')">5</button></td>
+ <td><button name="btn6" class="numberbutton" value="6" (click)="updateOutput('6')">6</button></td>
+ <td><button name="btnsub" class="numberbutton" value="-" (click)="operation('-')">-</button></td>
+ <td><button name="btnsqrt" class="numberbutton" value="sqrt" (click)="operation('sqrt')">&radic;</button></td>
+</tr>
+<tr>
+ <td><button name="btn7" class="numberbutton" value="7" (click)="updateOutput('7')">7</button></td>
+ <td><button name="btn8" class="numberbutton" value="8" (click)="updateOutput('8')">8</button></td>
+ <td><button name="btn9" class="numberbutton" value="9" (click)="updateOutput('9')">9</button></td>
+ <td><button name="btnmulti" class="numberbutton" value="*" (click)="operation('*')">*</button></td>
+ <td rowspan='2'><button name="btnequal" class="equalbutton" value="=" (click)="calculateTotal()">=</button></td>
+</tr>
+<tr>
+ <td><button name="btnclear" class="clearbutton" value="clear" (click)="clearOutput()">Clear</button></td>
+ <td><button name="btn0" class="numberbutton" value="0" (click)="updateOutput('0')">0</button></td>
+ <td><button name="btndot" class="numberbutton" value="." (click)="updateOutput('.')">.</button></td>
+ <td><button name="btndivide" class="numberbutton" value="/" (click)="operation('/')">/</button></td>
+</tr>
+</table> 
+
+</div>

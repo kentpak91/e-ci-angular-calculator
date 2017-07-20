@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+ <p><input [(ngModel)]="a" placeholder="a"></p>
+ <p><input [(ngModel)]="b" placeholder="b"></p>
+ <p><select [(ngModel)]="operator">
+	<option value='+'>+</option>
+	<option value='-'>-</option>
+	<option value='*'>*</option>
+	<option value='/'>/</option>
+	<option value='^'>^</option>
+	<option value='sqrt'>&radic;</option>
+ </select></p>
+ <p>{{a}} {{operator}} {{b}} =  {{ result() }}</p>
+
+
+ <div>
+ <button name="btn1" class="numberbutton" value="1" ng-click='updateOutput(1)'>1</button>
+ <button name="btn2" class="numberbutton" value="2" ng-click='updateOutput(1)'>2</button>
+ <button name="btn3" class="numberbutton" value="3" ng-click='updateOutput(1)'>3</button>
+ <button name="btnplus" class="numberbutton" value="+" ng-click='updateOutput(1)'>+</button>
+ <button name="btnsq" class="numberbutton" value="^" ng-click='updateOutput(1)'>^</button>
+ <br>
+ <button name="btn4" class="numberbutton" value="4" ng-click='updateOutput(1)'>4</button>
+ <button name="btn5" class="numberbutton" value="5" ng-click='updateOutput(1)'>5</button>
+ <button name="btn6" class="numberbutton" value="6" ng-click='updateOutput(1)'>6</button>
+ <button name="btnsub" class="numberbutton" value="-" ng-click='updateOutput(1)'>-</button>
+ <button name="btnsqrt" class="numberbutton" value="sqrt" ng-click='updateOutput(1)'>&radic;</button>
+ <br>
+ <button name="btn7" class="numberbutton" value="7" ng-click='updateOutput(1)'>7</button>
+ <button name="btn8" class="numberbutton" value="8" ng-click='updateOutput(1)'>8</button>
+ <button name="btn9" class="numberbutton" value="9" ng-click='updateOutput(1)'>9</button>
+ <button name="btnmulti" class="numberbutton" value="*" ng-click='updateOutput(1)'>*</button>
+ <br>
+ <button name="btnclear" class="numberbutton" value="clear" ng-click='updateOutput(1)'>1</button>
+ <button name="btn2" class="numberbutton" value="1" ng-click='updateOutput(1)'>1</button>
+ <button name="btn3" class="numberbutton" value="1" ng-click='updateOutput(1)'>1</button>
+ <button name="btn4" class="numberbutton" value="1" ng-click='updateOutput(1)'>1</button>
+ </div>
+
+</div>
