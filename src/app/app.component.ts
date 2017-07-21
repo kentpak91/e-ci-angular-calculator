@@ -8,11 +8,6 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'My Angular Calculator';
-  a:string;
-  b:string;
-  operator:string;
-
-  total = 0;
   output = '0';
   newOutput = true;
 

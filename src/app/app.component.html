@@ -3,24 +3,6 @@
   <h1>
     Welcome to {{title}}!
   </h1>
- <p><input [(ngModel)]="a" placeholder="a"></p>
- <p><input [(ngModel)]="b" placeholder="b"></p>
- <p><select [(ngModel)]="operator">
-	<option value='+'>+</option>
-	<option value='-'>-</option>
-	<option value='*'>*</option>
-	<option value='/'>/</option>
-	<option value='^'>^</option>
-	<option value='sqrt'>&radic;</option>
- </select></p>
- <p>{{a}} {{operator}} {{b}}</p>
-
-<button (click)="total = total + 1">Total</button>
-
-<p>{{ total }}</p>
-
-<p>{{ output }}</p>
-<p>{{ pendingOperation }}</p>
 
 <table>
 <tr>
